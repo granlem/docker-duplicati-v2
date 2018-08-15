@@ -3,10 +3,10 @@
 Simple implementation of **Duplicati 2.0** as Docker Image
 
 ### Environments
-**DATA_FOLDER** - Folder where Configuration Database is stored (Default: /data)
-**UPLOAD_FOLDER** - Folder where temporary upload files are stored (Default: /upload)
-**WEBSERVICE_PORT** - Port of the web frontend for backup configuration (Default: 8200)
-**WEBSERVICE_PASSWORD** - Password for the Webfrontend (Default is no password)
+**DATA_FOLDER** - Folder where Configuration Database is stored (Default: /data) <br />
+**UPLOAD_FOLDER** - Folder where temporary upload files are stored (Default: /upload) <br />
+**WEBSERVICE_PORT** - Port of the web frontend for backup configuration (Default: 8200) <br />
+**WEBSERVICE_PASSWORD** - Password for the Webfrontend (Default is no password) <br />
 
 ## Quick start
 ```
