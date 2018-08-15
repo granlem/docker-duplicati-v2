@@ -12,6 +12,6 @@ Simple implementation of **Duplicati 2.0** as Docker Image
 ## Quick start
 ```
 mkdir -p $(pwd)/backupme
-docker run -t -p 8200:8200 -v $(pwd)/backupme:/backup:ro granlem/duplicati-v2 
+docker run -it -p 8200:8200 -v $(pwd)/backupme:/backup:ro granlem/duplicati-v2 
 ```
 After you can add a backup job at http://localhost:8200 and use /backup as source to backup /backupme on host system.
