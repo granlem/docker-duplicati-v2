@@ -1,0 +1,39 @@
+# Example to use duplicati to backup seafile
+# Keep in mind, that you have to create backup a configuration on duplicity frontend
+version: '3'
+
+volumes:
+  seafile-data:
+    driver: local
+  config:
+    driver: local
+## if you like to backup an external volume i.e. run seafile seperate
+# duplicati_test_seafile-data: 
+#   external: true
+
+
+services:
+  duplicati:
+    restart: always
+    image: granlem/duplicati-v2:latest
+    ports:
+      - 8200:8200
+    environment:
+      DATA_FOLDER: "/config"
+      WEBSERVICE_PASSWORD: "changeme"
+    volumes:
+      - config:/config
+      - seafile-data:/backup/seafile-data:rw # :ro is recommanded if you dont want to restore
+
+  seafile:
+    ports:
+      - 8000:80
+    restart: always
+    image: seafileltd/seafile:latest
+    environment:
+      SEAFILE_SERVER_HOSTNAME: "example.org" #You should provide a real one, otherwise up/download is not possible
+      SEAFILE_ADMIN_EMAIL: "admin@example.org"
+      SEAFILE_ADMIN_PASSWORD: "changemetoo"
+    volumes:
+      - seafile-data:/shared
+
