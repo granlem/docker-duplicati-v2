@@ -7,7 +7,9 @@ Simple implementation of **Duplicati 2.0** as Docker Image
 **UPLOAD_FOLDER** - Folder where temporary upload files are stored (Default: /upload) <br />
 **WEBSERVICE_PORT** - Port of the web frontend for backup configuration (Default: 8200) <br />
 **WEBSERVICE_PASSWORD** - Password for the Webfrontend (By Default password is generated and shown in log) <br />
-**ALLOW_NO_PASSWORD** - Do not generate password when no WEBSERVICE_PASSWORD is provided, instead use no password (Default: false)
+**ALLOW_NO_PASSWORD** - Do not generate password when no WEBSERVICE_PASSWORD is provided, instead use no password (Default: false) <br />
+**WEBSERVICE_ALLOW_HOSTNAMES** - Allowed Hostnames that can access to web frontend seperated by semicolon. (Default: *)
+
 
 ## Quick start
 ```

@@ -4,6 +4,7 @@ DATA_FOLDER=${DATA_FOLDER:-"/data"}
 UPLOAD_FOLDER=${UPLOAD_FOLDER:-"/upload"}
 WEBSERVICE_PORT=${WEBSERVICE_PORT:-8200}
 ALLOW_NO_PASSWORD=${ALLOW_NO_PASSWORD:-false}
+WEBSERVICE_ALLOW_HOSTNAMES=${WEBSERVICE_ALLOW_HOSTNAMES:-"*"}
 
 # If no "WEBSERVICE_PASSWORD" is not set than create a password (security-by-default)
 if [ -z $WEBSERVICE_PASSWORD ] && [ $ALLOW_NO_PASSWORD = false ]; then
@@ -11,4 +12,4 @@ if [ -z $WEBSERVICE_PASSWORD ] && [ $ALLOW_NO_PASSWORD = false ]; then
     echo "The generated web frontent password is ${WEBSERVICE_PASSWORD}"
 fi
 
-duplicati-server --webservice-interface=any --server-datafolder="${DATA_FOLDER}" --asynchronous-upload-folder="${UPLOAD_FOLDER}" --webservice-port="${WEBSERVICE_PORT}" --webservice-password="${WEBSERVICE_PASSWORD}"
+duplicati-server --webservice-allowed-hostnames="${WEBSERVICE_ALLOW_HOSTNAMES}" --webservice-interface=any --server-datafolder="${DATA_FOLDER}" --asynchronous-upload-folder="${UPLOAD_FOLDER}" --webservice-port="${WEBSERVICE_PORT}" --webservice-password="${WEBSERVICE_PASSWORD}"
