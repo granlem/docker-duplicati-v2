@@ -1,7 +1,7 @@
 FROM debian:latest
 LABEL maintainer="kontakt@maximeveit.de"
 
-ENV DUPLICATI_DOWNLOAD="https://updates.duplicati.com/beta/duplicati_2.0.5.1-1_all.deb"
+ENV DUPLICATI_DOWNLOAD="https://updates.duplicati.com/beta/duplicati_2.0.6.3-1_all.deb"
 
 # Download and install duplicati
 RUN apt-get update -yq \
